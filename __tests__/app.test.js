@@ -10,13 +10,13 @@ describe('pokemon routes', () => {
   });
 
   it('/pokemon should return a list of pokemon', async () => {
-    const res = await request(app).get('/pokemon');
+    const res = await request(app).get('/');
     expect(res.body[0]).toEqual({ id: expect.any(String), name: expect.any(String) });
   });
 
 
   it('/pokemon/:id should return pokemon detail', async () => {
-    const res = await request(app).get('/pokemon/1');
+    const res = await request(app).get('/1');
     const Pikachu = {
       id: '1',
       name: 'Pikachu',
@@ -29,3 +29,5 @@ describe('pokemon routes', () => {
     pool.end();
   });
 });
+
+
